@@ -3,9 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebUI.Controllers
 {
-    //[ApiController]
     [Route("[controller]/[action]")]
-    //[Authorize]
     public class AuthController : Controller
     {
         [HttpGet]

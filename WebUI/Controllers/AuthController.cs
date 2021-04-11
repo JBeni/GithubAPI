@@ -3,10 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebUI.Controllers
 {
-    //[ApiController]
-    [Route("[controller]/[action]")]
-    //[Authorize]
-    public class AuthController : Controller
+    public class AuthController : ApiControllerBase
     {
         [HttpGet]
         public IActionResult Login(string returnUrl = "/")

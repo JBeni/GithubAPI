@@ -10,7 +10,35 @@ namespace WebUI.Controllers
         public async Task<IActionResult> GetGists(GetGistsQuery query)
         {
             var result = await Mediator.Send(query);
-            return Ok();
+            return Ok(result);
+        }
+
+        [HttpGet("get-public-gists")]
+        public async Task<IActionResult> GetPublicGists(GetPublicGistsQuery query)
+        {
+            var result = await Mediator.Send(query);
+            return Ok(result);
+        }
+
+        [HttpGet("get-starred-gists")]
+        public async Task<IActionResult> GetStarredGists(GetStarredGistsQuery query)
+        {
+            var result = await Mediator.Send(query);
+            return Ok(result);
+        }
+
+        [HttpGet("get-gist")]
+        public async Task<IActionResult> GetGist(GetGistQuery query)
+        {
+            var result = await Mediator.Send(query);
+            return Ok(result);
+        }
+
+        [HttpGet("get-gist-commits")]
+        public async Task<IActionResult> GetGistCommits(GetGistCommitsQuery query)
+        {
+            var result = await Mediator.Send(query);
+            return Ok(result);
         }
     }
 }

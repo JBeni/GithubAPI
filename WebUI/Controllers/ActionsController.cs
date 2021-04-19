@@ -21,10 +21,6 @@ namespace WebUI.Controllers
         [HttpGet("get-gists")]
         public async Task<IActionResult> GetGists()
         {
-            //string token = _configuration["GitHub:PersonalAccessToken"];
-            //_httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Token", token);
-
-
             var response = await _httpClient.GetAsync("gists");
             var content = await response.Content.ReadAsStringAsync();
             var gists = JsonConvert.DeserializeObject<List<GistResponse>>(content);

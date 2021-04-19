@@ -14,18 +14,18 @@ namespace Application.Handlers.Activities.Queries
 
     public class GetEventsQueryHandler : IRequestHandler<GetEventsQuery, List<EventResponse>>
     {
-        private readonly IActivityService _eventService;
+        private readonly IActivityService _activityService;
 
-        public GetEventsQueryHandler(IActivityService eventService)
+        public GetEventsQueryHandler(IActivityService activityService)
         {
-            _eventService = eventService;
+            _activityService = activityService;
         }
 
         public Task<List<EventResponse>> Handle(GetEventsQuery request, CancellationToken cancellationToken)
         {
             try
             {
-                var result = _eventService.GetEvents(request);
+                var result = _activityService.GetEvents(request);
                 return result;
             }
             catch (Exception ex)

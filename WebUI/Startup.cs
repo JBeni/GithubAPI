@@ -9,7 +9,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using WebUI.Filters;
-using WebUI.Services;
 
 namespace WebUI
 {
@@ -36,8 +35,6 @@ namespace WebUI
 
             services.AddApplicationLayer();
             services.AddInfrastructureLayer(Configuration);
-
-            services.AddSingleton<ICurrentUserService, CurrentUserService>();
 
             services.AddHttpContextAccessor();
             services.AddControllers(options =>

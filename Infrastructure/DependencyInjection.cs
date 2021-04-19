@@ -11,6 +11,7 @@ namespace Infrastructure
         public static IServiceCollection AddInfrastructureLayer(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddTransient<IActivityService, ActivityService>();
+            services.AddTransient<IActionService, ActionService>();
             services.AddTransient<IGistService, GistService>();
 
             services.AddTransient<IDateTime, DateTimeService>();

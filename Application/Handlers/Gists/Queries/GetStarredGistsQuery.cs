@@ -10,6 +10,7 @@ namespace Application.Handlers.Gists.Queries
 {
     public class GetStarredGistsQuery : IRequest<List<GistResponse>>
     {
+        public string PersonalGithubToken { get; set; }
     }
 
     public class GetStarredGistsQueryHandler : IRequestHandler<GetStarredGistsQuery, List<GistResponse>>

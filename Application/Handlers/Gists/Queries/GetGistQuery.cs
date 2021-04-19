@@ -9,6 +9,7 @@ namespace Application.Handlers.Gists.Queries
 {
     public class GetGistQuery : IRequest<GistResponse>
     {
+        public string PersonalGithubToken { get; set; }
         public int GistId { get; set; }
     }
 

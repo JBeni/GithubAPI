@@ -9,6 +9,7 @@ namespace Application.Handlers.Actions.Queries
 {
     public class GetArtifactQuery : IRequest<ArtifactResponse>
     {
+        public string PersonalGithubToken { get; set; }
         public string Owner { get; set; }
         public string Repo { get; set; }
         public int ArtifactId { get; set; }

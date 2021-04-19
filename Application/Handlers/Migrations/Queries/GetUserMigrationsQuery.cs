@@ -10,6 +10,7 @@ namespace Application.Handlers.Migrations.Queries
 {
     public class GetUserMigrationsQuery : IRequest<List<UserMigrationResponse>>
     {
+        public string PersonalGithubToken { get; set; }
     }
 
     public class GetUserMigrationsQueryHandler : IRequestHandler<GetUserMigrationsQuery, List<UserMigrationResponse>>

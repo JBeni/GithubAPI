@@ -10,6 +10,7 @@ namespace Application.Handlers.Actions.Queries
 {
     public class GetRepositoryWorkflowsQuery : IRequest<List<WorkflowResponse>>
     {
+        public string PersonalGithubToken { get; set; }
         public string Owner { get; set; }
         public string Repo { get; set; }
     }

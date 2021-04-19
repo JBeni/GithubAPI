@@ -1,15 +1,14 @@
-﻿using System;
+﻿using Application.Handlers.Licenses.Queries;
+using Application.Responses;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Application.Interfaces
 {
     public interface ILicenseService
     {
-        //Task<ArtifactResponse> GetLicenses(GetLicensesQuery query);
-        //Task<ArtifactResponse> GetLicense(GetLicenseQuery query);
-        //Task<ArtifactResponse> GetRepositoryLicense(GetRepositoryLicenseQuery query);
+        Task<List<LicensesResponse>> GetLicenses(GetLicensesQuery query);
+        Task<LicenseResponse> GetLicense(GetLicenseQuery query);
+        Task<RepositoryLicenseResponse> GetRepositoryLicense(GetRepositoryLicenseQuery query);
     }
 }

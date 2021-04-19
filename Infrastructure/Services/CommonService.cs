@@ -18,5 +18,13 @@ namespace Infrastructure.Services
             _httpClient.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("GithubAPI", "v1"));
             _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
         }
+
+        public void AuthenticateUserWithPersonalToken(HttpClient httpClient, string token)
+        {
+            if (token != null)
+            {
+                _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Token", token);
+            }
+        }
     }
 }

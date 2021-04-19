@@ -10,6 +10,8 @@ namespace Application.Handlers.Actions.Queries
 {
     public class GetRepositoryArtifactsQuery : IRequest<List<ArtifactResponse>>
     {
+        public string Owner { get; set; }
+        public string Repo { get; set; }
     }
 
     public class GetRepositoryArtifactsQueryHandler : IRequestHandler<GetRepositoryArtifactsQuery, List<ArtifactResponse>>

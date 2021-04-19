@@ -7,8 +7,8 @@ namespace Application.Interfaces
 {
     public interface ILicenseService
     {
-        Task<List<LicensesResponse>> GetLicenses(GetLicensesQuery query);
-        Task<LicenseExtendResponse> GetLicense(GetLicenseQuery query);
+        Task<List<LicenseExtendResponse>> GetLicenses(GetLicensesQuery query);
+        Task<LicenseResponse> GetLicense(GetLicenseQuery query);
         Task<RepositoryLicenseResponse> GetRepositoryLicense(GetRepositoryLicenseQuery query);
     }
 }

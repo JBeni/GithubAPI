@@ -10,6 +10,8 @@ namespace Application.Handlers.Actions.Queries
 {
     public class GetRepositoryWorkflowsQuery : IRequest<List<WorkflowResponse>>
     {
+        public string Owner { get; set; }
+        public string Repo { get; set; }
     }
 
     public class GetRepositoryWorkflowsQueryHandler : IRequestHandler<GetRepositoryWorkflowsQuery, List<WorkflowResponse>>

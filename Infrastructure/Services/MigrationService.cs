@@ -19,6 +19,7 @@ namespace Infrastructure.Services
 
         public async Task<List<UserMigrationResponse>> GetUserMigrations(GetUserMigrationsQuery query)
         {
+            AuthenticateUserWithPersonalToken(_httpClient, query.PersonalGithubToken);
             var response = await _httpClient.GetAsync($"user/migrations");
             var content = await response.Content.ReadAsStringAsync();
             var results = JsonConvert.DeserializeObject<List<UserMigrationResponse>>(content);

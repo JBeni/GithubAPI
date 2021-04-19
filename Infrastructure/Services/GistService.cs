@@ -11,6 +11,7 @@ namespace Infrastructure.Services
     {
         public async Task<GistResponse> GetGist(GetGistQuery query)
         {
+            AuthenticateUserWithPersonalToken(_httpClient, query.PersonalGithubToken);
             var response = await _httpClient.GetAsync($"gists/{query.GistId}");
             var content = await response.Content.ReadAsStringAsync();
             var result = JsonConvert.DeserializeObject<GistResponse>(content);
@@ -19,6 +20,7 @@ namespace Infrastructure.Services
 
         public async Task<List<GistResponse>> GetGistCommits(GetGistCommitsQuery query)
         {
+            AuthenticateUserWithPersonalToken(_httpClient, query.PersonalGithubToken);
             var response = await _httpClient.GetAsync($"gists/{query.GistId}/commits");
             var content = await response.Content.ReadAsStringAsync();
             var results = JsonConvert.DeserializeObject<List<GistResponse>>(content);
@@ -27,6 +29,7 @@ namespace Infrastructure.Services
 
         public async Task<List<GistResponse>> GetGists(GetGistsQuery query)
         {
+            AuthenticateUserWithPersonalToken(_httpClient, query.PersonalGithubToken);
             var response = await _httpClient.GetAsync($"gists");
             var content = await response.Content.ReadAsStringAsync();
             var results = JsonConvert.DeserializeObject<List<GistResponse>>(content);
@@ -43,6 +46,7 @@ namespace Infrastructure.Services
 
         public async Task<List<GistResponse>> GetStarredGists(GetStarredGistsQuery query)
         {
+            AuthenticateUserWithPersonalToken(_httpClient, query.PersonalGithubToken);
             var response = await _httpClient.GetAsync($"gists/starred");
             var content = await response.Content.ReadAsStringAsync();
             var results = JsonConvert.DeserializeObject<List<GistResponse>>(content);

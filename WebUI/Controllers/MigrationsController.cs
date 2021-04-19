@@ -7,14 +7,14 @@ namespace WebUI.Controllers
     public class MigrationsController : ApiControllerBase
     {
         [HttpGet("get-import-status")]
-        public async Task<IActionResult> GetImportStatus(GetImportStatusQuery query)
+        public async Task<IActionResult> GetImportStatus([FromQuery] GetImportStatusQuery query)
         {
             var result = await Mediator.Send(query);
             return Ok(result);
         }
 
         [HttpGet("get-user-migrations")]
-        public async Task<IActionResult> GetUserMigrations(GetUserMigrationsQuery query)
+        public async Task<IActionResult> GetUserMigrations([FromQuery] GetUserMigrationsQuery query)
         {
             var result = await Mediator.Send(query);
             return Ok(result);

@@ -1,14 +1,13 @@
-﻿using System;
+﻿using Application.Handlers.Gitignores.Queries;
+using Application.Responses;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Application.Interfaces
 {
     public interface IGitignoreService
     {
-        //Task<List<EventResponse>> GetGitignoreTemplates(GetGitignoreTemplatesQuery query);
-        //Task<List<EventResponse>> GetGitignoreTemplate(GetGitignoreTemplateQuery query);
+        Task<List<GitignoreTemplateResponse>> GetGitignoreTemplates(GetGitignoreTemplatesQuery query);
+        Task<GitignoreTemplateResponse> GetGitignoreTemplate(GetGitignoreTemplateQuery query);
     }
 }

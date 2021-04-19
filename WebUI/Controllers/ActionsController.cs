@@ -24,7 +24,6 @@ namespace WebUI.Controllers
             var response = await _httpClient.GetAsync("gists");
             var content = await response.Content.ReadAsStringAsync();
             var gists = JsonConvert.DeserializeObject<List<GistResponse>>(content);
-
             return Ok();
         }
     }

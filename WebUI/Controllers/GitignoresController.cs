@@ -8,9 +8,6 @@ namespace WebUI.Controllers
         [HttpGet("get-gists")]
         public async Task<IActionResult> GetGists()
         {
-            //var response = await _httpClient.GetAsync("gists");
-            //var content = await response.Content.ReadAsStringAsync();
-            //var gists = JsonConvert.DeserializeObject<List<Gist>>(content);
             return Ok();
         }
     }

@@ -20,7 +20,6 @@ namespace Infrastructure
             services.AddTransient<IRepositoryService, RepositoryService>();
 
             services.AddTransient<IDateTime, DateTimeService>();
-
             return services;
         }
     }

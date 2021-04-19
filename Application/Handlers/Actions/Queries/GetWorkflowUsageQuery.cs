@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Application.Handlers.Actions.Queries
 {
-    public class GetWorkflowUsageQuery : IRequest<WorkflowResponse>
+    public class GetWorkflowUsageQuery : IRequest<WorkflowUsageResponse>
     {
         public string Owner { get; set; }
         public string Repo { get; set; }
         public int WorkflowId { get; set; }
     }
 
-    public class GetWorkflowUsageQueryHandler : IRequestHandler<GetWorkflowUsageQuery, WorkflowResponse>
+    public class GetWorkflowUsageQueryHandler : IRequestHandler<GetWorkflowUsageQuery, WorkflowUsageResponse>
     {
         private readonly IActionService _actionService;
 
@@ -23,7 +23,7 @@ namespace Application.Handlers.Actions.Queries
             _actionService = actionService;
         }
 
-        public Task<WorkflowResponse> Handle(GetWorkflowUsageQuery request, CancellationToken cancellationToken)
+        public Task<WorkflowUsageResponse> Handle(GetWorkflowUsageQuery request, CancellationToken cancellationToken)
         {
             try
             {

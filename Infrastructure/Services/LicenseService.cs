@@ -17,11 +17,11 @@ namespace Infrastructure.Services
             return result;
         }
 
-        public async Task<List<LicensesResponse>> GetLicenses(GetLicensesQuery query)
+        public async Task<List<LicenseExtendResponse>> GetLicenses(GetLicensesQuery query)
         {
             var response = await _httpClient.GetAsync($"licenses");
             var content = await response.Content.ReadAsStringAsync();
-            var results = JsonConvert.DeserializeObject<List<LicensesResponse>>(content);
+            var results = JsonConvert.DeserializeObject<List<LicenseExtendResponse>>(content);
             return results;
         }
 

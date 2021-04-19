@@ -41,11 +41,11 @@ namespace Infrastructure.Services
             return result;
         }
 
-        public async Task<WorkflowResponse> GetWorkflowUsage(GetWorkflowUsageQuery query)
+        public async Task<WorkflowUsageResponse> GetWorkflowUsage(GetWorkflowUsageQuery query)
         {
             var response = await _httpClient.GetAsync($"/repos/{query.Owner}/{query.Repo}/actions/workflows/{query.WorkflowId}/timing");
             var content = await response.Content.ReadAsStringAsync();
-            var result = JsonConvert.DeserializeObject<WorkflowResponse>(content);
+            var result = JsonConvert.DeserializeObject<WorkflowUsageResponse>(content);
             return result;
         }
     }

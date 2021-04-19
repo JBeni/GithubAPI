@@ -2,7 +2,7 @@
 
 namespace Application.Responses
 {
-    public class LicensesResponse
+    public class LicenseExtendResponse
     {
         public string Key { get; set; }
         public string Name { get; set; }

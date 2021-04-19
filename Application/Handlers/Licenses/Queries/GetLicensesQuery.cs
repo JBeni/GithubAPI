@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Application.Handlers.Licenses.Queries
 {
-    public class GetLicensesQuery : IRequest<List<LicensesResponse>>
+    public class GetLicensesQuery : IRequest<List<LicenseExtendResponse>>
     {
     }
 
-    public class GetLicensesQueryHandler : IRequestHandler<GetLicensesQuery, List<LicensesResponse>>
+    public class GetLicensesQueryHandler : IRequestHandler<GetLicensesQuery, List<LicenseExtendResponse>>
     {
         private readonly ILicenseService _licenseService;
 
@@ -21,7 +21,7 @@ namespace Application.Handlers.Licenses.Queries
             _licenseService = licenseService;
         }
 
-        public Task<List<LicensesResponse>> Handle(GetLicensesQuery request, CancellationToken cancellationToken)
+        public Task<List<LicenseExtendResponse>> Handle(GetLicensesQuery request, CancellationToken cancellationToken)
         {
             try
             {

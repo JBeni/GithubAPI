@@ -11,6 +11,6 @@ namespace Application.Interfaces
         Task<List<ArtifactResponse>> GetRepositoryArtifacts(GetRepositoryArtifactsQuery query);
         Task<List<WorkflowResponse>> GetRepositoryWorkflows(GetRepositoryWorkflowsQuery query);
         Task<WorkflowResponse> GetWorkflow(GetWorkflowQuery query);
-        Task<WorkflowResponse> GetWorkflowUsage(GetWorkflowUsageQuery query);
+        Task<WorkflowUsageResponse> GetWorkflowUsage(GetWorkflowUsageQuery query);
     }
 }

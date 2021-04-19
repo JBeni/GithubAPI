@@ -1,30 +1,44 @@
-﻿using Application.Responses;
+﻿using Application.Handlers.Actions.Queries;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace WebUI.Controllers
 {
     public class ActionsController : ApiControllerBase
     {
-        protected HttpClient _httpClient;
-        private readonly IConfiguration _configuration;
-
-        public ActionsController(IConfiguration configuration)
+        [HttpGet("get-artifact")]
+        public async Task<IActionResult> GetArtifact(GetArtifactQuery query)
         {
-            _configuration = configuration;
+            var result = await Mediator.Send(query);
+            return Ok(result);
         }
 
-        [HttpGet("get-gists")]
-        public async Task<IActionResult> GetGists()
+        [HttpGet("get-repository-artifacts")]
+        public async Task<IActionResult> GetRepositoryArtifacts(GetRepositoryArtifactsQuery query)
         {
-            var response = await _httpClient.GetAsync("gists");
-            var content = await response.Content.ReadAsStringAsync();
-            var gists = JsonConvert.DeserializeObject<List<GistResponse>>(content);
-            return Ok();
+            var result = await Mediator.Send(query);
+            return Ok(result);
+        }
+
+        [HttpGet("get-repository-workflows")]
+        public async Task<IActionResult> GetRepositoryWorkflows(GetRepositoryWorkflowsQuery query)
+        {
+            var result = await Mediator.Send(query);
+            return Ok(result);
+        }
+
+        [HttpGet("get-workflow")]
+        public async Task<IActionResult> GetWorkflow(GetWorkflowQuery query)
+        {
+            var result = await Mediator.Send(query);
+            return Ok(result);
+        }
+
+        [HttpGet("get-workflow-usage")]
+        public async Task<IActionResult> GetWorkflowUsage(GetWorkflowUsageQuery query)
+        {
+            var result = await Mediator.Send(query);
+            return Ok(result);
         }
     }
 }

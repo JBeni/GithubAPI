@@ -9,6 +9,8 @@ namespace Application.Handlers.Actions.Queries
 {
     public class GetWorkflowQuery : IRequest<WorkflowResponse>
     {
+        public string Owner { get; set; }
+        public string Repo { get; set; }
         public int WorkflowId { get; set; }
     }
 

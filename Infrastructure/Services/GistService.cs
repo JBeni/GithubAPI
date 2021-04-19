@@ -1,16 +1,52 @@
 ﻿using Application.Handlers.Gists.Queries;
 using Application.Interfaces;
 using Application.Responses;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Infrastructure.Services
 {
-    public class GistService : IGistService
+    public class GistService : CommonService, IGistService
     {
-        public Task<List<GistResponse>> GetGists(GetGistsQuery query)
+        public async Task<GistResponse> GetGist(GetGistQuery query)
         {
-            throw new System.NotImplementedException();
+            var response = await _httpClient.GetAsync($"gists/{query.GistId}");
+            var content = await response.Content.ReadAsStringAsync();
+            var result = JsonConvert.DeserializeObject<GistResponse>(content);
+            return result;
+        }
+
+        public async Task<List<GistResponse>> GetGistCommits(GetGistCommitsQuery query)
+        {
+            var response = await _httpClient.GetAsync($"gists/{query.GistId}/commits");
+            var content = await response.Content.ReadAsStringAsync();
+            var results = JsonConvert.DeserializeObject<List<GistResponse>>(content);
+            return results;
+        }
+
+        public async Task<List<GistResponse>> GetGists(GetGistsQuery query)
+        {
+            var response = await _httpClient.GetAsync($"gists");
+            var content = await response.Content.ReadAsStringAsync();
+            var results = JsonConvert.DeserializeObject<List<GistResponse>>(content);
+            return results;
+        }
+
+        public async Task<List<GistResponse>> GetPublicGists(GetPublicGistsQuery query)
+        {
+            var response = await _httpClient.GetAsync($"gists/public");
+            var content = await response.Content.ReadAsStringAsync();
+            var results = JsonConvert.DeserializeObject<List<GistResponse>>(content);
+            return results;
+        }
+
+        public async Task<List<GistResponse>> GetStarredGists(GetStarredGistsQuery query)
+        {
+            var response = await _httpClient.GetAsync($"gists/starred");
+            var content = await response.Content.ReadAsStringAsync();
+            var results = JsonConvert.DeserializeObject<List<GistResponse>>(content);
+            return results;
         }
     }
 }

@@ -1,9 +1,7 @@
-﻿using Application.Common.Models;
-using Application.Handlers.Actions.Commands;
-using Application.Handlers.Actions.Queries;
+﻿using Application.Handlers.Actions.Queries;
 using Application.Interfaces;
 using Application.Responses;
-using System;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -11,39 +9,44 @@ namespace Infrastructure.Services
 {
     public class ActionService : CommonService, IActionService
     {
-        public Task<RequestResponse> DisableWorkflow(DisableWorkflowCommand command)
+        public async Task<ArtifactResponse> GetArtifact(GetArtifactQuery query)
         {
-            throw new NotImplementedException();
+            var response = await _httpClient.GetAsync($"/repos/{query.Owner}/{query.Repo}/actions/artifacts/{query.ArtifactId}");
+            var content = await response.Content.ReadAsStringAsync();
+            var result = JsonConvert.DeserializeObject<ArtifactResponse>(content);
+            return result;
         }
 
-        public Task<RequestResponse> EnableWorkflow(EnableWorkflowCommand command)
+        public async Task<List<ArtifactResponse>> GetRepositoryArtifacts(GetRepositoryArtifactsQuery query)
         {
-            throw new NotImplementedException();
+            var response = await _httpClient.GetAsync($"/repos/{query.Owner}/{query.Repo}/actions/artifacts");
+            var content = await response.Content.ReadAsStringAsync();
+            var results = JsonConvert.DeserializeObject<List<ArtifactResponse>>(content);
+            return results;
         }
 
-        public Task<ArtifactResponse> GetArtifact(GetArtifactQuery query)
+        public async Task<List<WorkflowResponse>> GetRepositoryWorkflows(GetRepositoryWorkflowsQuery query)
         {
-            throw new NotImplementedException();
+            var response = await _httpClient.GetAsync($"/repos/{query.Owner}/{query.Repo}/actions/workflows");
+            var content = await response.Content.ReadAsStringAsync();
+            var results = JsonConvert.DeserializeObject<List<WorkflowResponse>>(content);
+            return results;
         }
 
-        public Task<List<ArtifactResponse>> GetRepositoryArtifacts(GetRepositoryArtifactsQuery query)
+        public async Task<WorkflowResponse> GetWorkflow(GetWorkflowQuery query)
         {
-            throw new NotImplementedException();
+            var response = await _httpClient.GetAsync($"/repos/{query.Owner}/{query.Repo}/actions/workflows/{query.WorkflowId}");
+            var content = await response.Content.ReadAsStringAsync();
+            var result = JsonConvert.DeserializeObject<WorkflowResponse>(content);
+            return result;
         }
 
-        public Task<List<WorkflowResponse>> GetRepositoryWorkflows(GetRepositoryWorkflowsQuery query)
+        public async Task<WorkflowResponse> GetWorkflowUsage(GetWorkflowUsageQuery query)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task<WorkflowResponse> GetWorkflow(GetWorkflowQuery query)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<WorkflowResponse> GetWorkflowUsage(GetWorkflowUsageQuery query)
-        {
-            throw new NotImplementedException();
+            var response = await _httpClient.GetAsync($"/repos/{query.Owner}/{query.Repo}/actions/workflows/{query.WorkflowId}/timing");
+            var content = await response.Content.ReadAsStringAsync();
+            var result = JsonConvert.DeserializeObject<WorkflowResponse>(content);
+            return result;
         }
     }
 }

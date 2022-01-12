@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Application.Responses
+﻿namespace Application.Responses
 {
     public class EventResponse
     {

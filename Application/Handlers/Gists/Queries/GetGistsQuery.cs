@@ -1,12 +1,4 @@
-﻿using Application.Interfaces;
-using Application.Responses;
-using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace Application.Handlers.Gists.Queries
+﻿namespace Application.Handlers.Gists.Queries
 {
     public class GetGistsQuery : IRequest<List<GistResponse>>
     {

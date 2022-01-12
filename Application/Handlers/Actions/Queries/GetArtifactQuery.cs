@@ -1,11 +1,4 @@
-﻿using Application.Interfaces;
-using Application.Responses;
-using MediatR;
-using System;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace Application.Handlers.Actions.Queries
+﻿namespace Application.Handlers.Actions.Queries
 {
     public class GetArtifactQuery : IRequest<ArtifactResponse>
     {
@@ -37,5 +30,4 @@ namespace Application.Handlers.Actions.Queries
             }
         }
     }
-
 }

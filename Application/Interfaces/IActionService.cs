@@ -1,9 +1,4 @@
-﻿using Application.Handlers.Actions.Queries;
-using Application.Responses;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
-namespace Application.Interfaces
+﻿namespace Application.Interfaces
 {
     public interface IActionService
     {

@@ -1,12 +1,4 @@
-﻿using Application.Interfaces;
-using Application.Responses;
-using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace Application.Handlers.Repositories.Queries
+﻿namespace Application.Handlers.Repositories.Queries
 {
     public class GetBranchesQuery : IRequest<List<BranchResponse>>
     {

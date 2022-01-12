@@ -1,8 +1,4 @@
-﻿using System;
-using System.Net.Http;
-using System.Net.Http.Headers;
-
-namespace Infrastructure.Services
+﻿namespace Infrastructure.Services
 {
     public class CommonService
     {

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Application.Responses
+﻿namespace Application.Responses
 {
     public class LicenseExtendResponse
     {

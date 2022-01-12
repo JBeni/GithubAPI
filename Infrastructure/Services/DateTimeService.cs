@@ -1,7 +1,4 @@
-﻿using Application.Common.Interfaces;
-using System;
-
-namespace Infrastructure.Services
+﻿namespace Infrastructure.Services
 {
     public class DateTimeService : IDateTime
     {

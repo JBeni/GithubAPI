@@ -1,11 +1,4 @@
-﻿using Application.Interfaces;
-using Application.Responses;
-using MediatR;
-using System;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace Application.Handlers.GitDatabases.Queries
+﻿namespace Application.Handlers.GitDatabases.Queries
 {
     public class GetCommitQuery : IRequest<CommitResponse>
     {

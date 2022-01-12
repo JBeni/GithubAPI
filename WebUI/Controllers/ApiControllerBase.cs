@@ -1,8 +1,4 @@
-﻿using MediatR;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.DependencyInjection;
-
-namespace WebUI.Controllers
+﻿namespace WebUI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

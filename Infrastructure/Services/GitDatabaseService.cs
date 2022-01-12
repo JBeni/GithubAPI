@@ -1,10 +1,4 @@
-﻿using Application.Handlers.GitDatabases.Queries;
-using Application.Interfaces;
-using Application.Responses;
-using Newtonsoft.Json;
-using System.Threading.Tasks;
-
-namespace Infrastructure.Services
+﻿namespace Infrastructure.Services
 {
     public class GitDatabaseService : CommonService, IGitDatabaseService
     {

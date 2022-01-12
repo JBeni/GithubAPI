@@ -1,8 +1,4 @@
-﻿using Application.Handlers.Activities.Queries;
-using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
-
-namespace WebUI.Controllers
+﻿namespace WebUI.Controllers
 {
     public class ActivitiesController : ApiControllerBase
     {

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Application.Responses
+﻿namespace Application.Responses
 {
     public class RepositoryResponse
     {

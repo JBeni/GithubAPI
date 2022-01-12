@@ -1,11 +1,4 @@
-﻿using Application.Interfaces;
-using Application.Responses;
-using MediatR;
-using System;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace Application.Handlers.Gitignores.Queries
+﻿namespace Application.Handlers.Gitignores.Queries
 {
     public class GetGitignoreTemplateQuery : IRequest<GitignoreTemplateResponse>
     {

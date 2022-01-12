@@ -1,10 +1,4 @@
-﻿using Application.Common.Interfaces;
-using Application.Interfaces;
-using Infrastructure.Services;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-
-namespace Infrastructure
+﻿namespace Infrastructure
 {
     public static class DependencyInjection
     {

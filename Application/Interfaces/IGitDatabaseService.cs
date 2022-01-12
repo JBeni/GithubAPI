@@ -1,8 +1,4 @@
-﻿using Application.Handlers.GitDatabases.Queries;
-using Application.Responses;
-using System.Threading.Tasks;
-
-namespace Application.Interfaces
+﻿namespace Application.Interfaces
 {
     public interface IGitDatabaseService
     {

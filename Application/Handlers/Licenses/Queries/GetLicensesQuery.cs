@@ -1,12 +1,4 @@
-﻿using Application.Interfaces;
-using Application.Responses;
-using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace Application.Handlers.Licenses.Queries
+﻿namespace Application.Handlers.Licenses.Queries
 {
     public class GetLicensesQuery : IRequest<List<LicenseExtendResponse>>
     {

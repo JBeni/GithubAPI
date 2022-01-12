@@ -1,8 +1,4 @@
-﻿using Application.Handlers.Gitignores.Queries;
-using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
-
-namespace WebUI.Controllers
+﻿namespace WebUI.Controllers
 {
     public class GitignoresController : ApiControllerBase
     {

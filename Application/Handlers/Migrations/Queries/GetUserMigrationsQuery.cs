@@ -1,12 +1,4 @@
-﻿using Application.Interfaces;
-using Application.Responses;
-using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace Application.Handlers.Migrations.Queries
+﻿namespace Application.Handlers.Migrations.Queries
 {
     public class GetUserMigrationsQuery : IRequest<List<UserMigrationResponse>>
     {

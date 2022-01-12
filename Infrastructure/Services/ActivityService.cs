@@ -1,11 +1,4 @@
-﻿using Application.Handlers.Activities.Queries;
-using Application.Interfaces;
-using Application.Responses;
-using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
-namespace Infrastructure.Services
+﻿namespace Infrastructure.Services
 {
     public class ActivityService : CommonService, IActivityService
     {

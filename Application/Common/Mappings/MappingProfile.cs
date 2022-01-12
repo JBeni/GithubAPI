@@ -1,9 +1,4 @@
-﻿using AutoMapper;
-using System;
-using System.Linq;
-using System.Reflection;
-
-namespace Application.Common.Mappings
+﻿namespace Application.Common.Mappings
 {
     public class MappingProfile : Profile
     {
